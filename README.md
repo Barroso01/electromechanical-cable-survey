@@ -1,4 +1,4 @@
-# Title of Paper 1
+# Electromechanical Cable Survey
 
 [![PDF](https://img.shields.io/badge/View-PDF-red)](/main.pdf)
 
