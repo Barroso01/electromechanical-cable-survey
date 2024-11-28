@@ -1,0 +1,62 @@
+\label{sec:Quasistatic Fields}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Dynamic and Quasi-Static Fields}
+The physics becomes more complex when considering alternating currents (AC). Recall, these currents are a consequence of the harmonics of the electromagnetic field where its constituents; the electric and magnetic fields are coupled to each other. For instance, a changing magnetic field is a source of electric fields and vice versa. Indeed, Maxwell´s equation dictate the coupling between changing electromagnetic fields. 
+\\
+
+Illustrated in section \ref{sec:Conducting Matter and Currents}, Maxwell's equations are the starting point of all electromagnetic phenomena \footnote{From electrical engineering to the physical origin of light.}. Having said this, we start by considering all the possible electromagnetic properties of matter, we proceed to build the equations that govern our cable system discarding properties only with physical arguments. This process will illustrate how the critical variables arise from theory and why.   
+\\
+
+Consider the total charge $\rho= \rho_f - \nabla \cdot P$ distinguishing free charge from polarization charge respectively. Similarly, the total current $j = j_f + \nabla \times M + \frac{\partial P}{\partial t}$, can be expressed as the sum of all possible contributions to current. Substituting these values into Maxwell´s equations and and defining auxiliary fields $D=\epsilon_0 E + P$ and $H = B/\mu_0 -M$ lead to Maxwell´s equations in matter
+\begin{equation}
+\begin{aligned}
+    \begin{array}{cc}
+    \nabla \cdot \mathbf{D} = \rho_f & \nabla \cdot \mathbf{B} = 0 \\
+    \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t} & \nabla \times \mathbf{H} = \mathbf{j_f} + \frac{\partial \mathbf{D}}{\partial t}.
+    \end{array}
+\end{aligned}
+\end{equation}
+
+These laws describe the phenomenon's of electromagnetic induction and displacement currents. However, when considering the quasistatic limit where the sources change slowly enough in time to justify dropping one or the other of the time derivatives from the Maxwell equations. If the source is a slowly varying charge density $\rho(r,t)$ we neglect $dB/dt$ we have the quasi-electrostatic approximation. It applies to poor conductors since charge relaxation is slow. In contrast, when the source is a slowly varying current density $j(r, t)$, we neglect $dE/dt$ to get a quasi-magnetostatic approximation. This applies to good conductors where charge relaxation is fast and current frequency is low. \\
+
+It is pertinent to add that experiments confirm that Coulumb-Lorentz force remains valid when sources and fields vary in time. This result will lead to generate a full analysis on forces arround cables. Recall that the general form of electromagnetic forces is given by
+\begin{equation}
+    \label{eq:force}
+    F(t) = \int d^3r [\rho(r,t) E(r,t) + j(r,t) \times B(r,t)].
+\end{equation}
+
+\subsection{Quasi-Magnetostatics}
+The following section aims to explain the three conditions that justify the use of this theory. First, we introduce the conditions and their meaning to latter present calculations obtained from the numerical evaluation applied in the context of metals like copper and aluminium. Pay close attention,
+\\
+
+Charge disappears from the bulk of good conductors faster than for a poor conductor. Thus, to a good approximation, we may set $\rho_f = 0$ and   $\nabla\cdot j_f = 0$. The latter is the steady-current condition that follows from the continuity equation \ref{eq:continuity}. 
+\\
+To find the quasistatic approximation note that the current density $ j_f = \sigma E $ in an Ohmic system is driven by an external source. Thus, we write Ampere-Maxwell
+\begin{equation}
+    \nabla \times B = \mu j_{ext} +\mu \sigma E + \mu \epsilon \frac{\partial E}{\partial t},
+\end{equation}
+ and calculate the contribution of displacement current density ($j_D = \mu \epsilon \partial E / \partial t$) \footnote{Writing $\nabla \propto 1/l$ and $d/dt \propto 1/T \propto w$.} by obtaining the following ratios
+\begin{align}
+\label{eq:quasimagnetostatic-condition}
+\frac{j_D}{j_{\text{ext}}} &\propto \mu \epsilon w^2 l^2 \ll 1 \\
+\frac{j_D}{j_f} &\propto \frac{\epsilon w E}{\sigma E} \propto w\tau_E \ll 1 \quad (\tau_E=\frac{\epsilon}{\sigma}).
+\end{align}
+ 
+When both conditions are satisfied, we have quasi-magneto-static behavior in conducting material \footnote{In the context of cables, l is the radius of the cable.}. More formally, since the contributions of the displacement current density are small, neglecting displacement current from Ampere-Maxwell law is valid. 
+\\  %Por ahi de los 631 DRUDE
+
+The physics in this regime depend on the relative importance of external vs induced fields. For example a field $B_{ext}$ produced by $j_{ext}$ create a Faraday electric field ($E_F \propto wl B_ext$). The corresponding current density $j_F = \sigma E_F$ produces its own Ampere magnetic field $B_F = \mu \sigma l E_F$. Therefore, if
+\begin{equation}
+\label{eq:inductioncondition}
+    B_F/B_{ext} \propto \mu \sigma wl^2 = w\tau_m,
+\end{equation}
+we can build a the general quasi static condition as $(w\tau_M )(w\tau_E )<<1$. In other words, if $w\tau_m<<1$ electromagnetic induction is negligible and if its larger than one electromagnetic induction dominates.
+\\
+This theory is important because it is a quantitative justification the quasi-magnetostatic approximation. Formally, we modify Maxwell's laws in matter to obtain
+\begin{equation}
+\label{eq:MaxwellQuasiMagnetostatic}
+    \begin{array}{cc}
+        \nabla \times B = \mu \sigma E   &  \nabla \times E = - dB/dt.
+    \end{array} 
+\end{equation}
+We can now justify this static approximation whenever $j_{ext}$ is negligible and when the current has low frequencies\footnote{The standard 60 Hz lies safely in the domain of quasi-magnetostatics. Zanwill continues to state that \ref{eq:quasimagnetostatic-condition} is satisfied up to ultraviolet frequencies ($10^17$ Hz) for high-conductivity materials like metals\cite{zangwill2013modern}.}. Furthermore, condition \ref{eq:inductioncondition} will tell us if induction effects dominate in our system.

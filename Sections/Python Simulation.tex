@@ -1,0 +1,31 @@
+\label{sec:TheoryToSimulation}
+From the mathematical model, the python script in [annex 1] was implemented. The pseudo-code is presented below: 
+
+\begin{algorithm}[H]
+\caption{Simulation Algorithm}
+\label{alg:simulation}
+
+\begin{algorithmic}[1]
+\State \textbf{Define Critical Variables}
+\State \textbf{Define 2D Space}
+\State \textbf{Define Analytic Functions for:} $E$, $B$, $v$, $j$, and $\epsilon$
+\State \textbf{Calculate Quasimagnetostatic Conditions}
+\State \textbf{Calculate Induction Condition}
+
+\If{Quasi-magnetostatic Conditions are True}
+    \State \textbf{Plot Behavior of $\epsilon$ , $\sigma$  and $\Omega$}
+    \State \textbf{Plot $E$ and $B$ Fields}
+    \State \textbf{Calculate the Value of $S$} (Average)
+    \State \textbf{Plot $S$ Field} (Heat Energy Flux per unit Area)
+    \State \textbf{Calculate Power}
+    \State \textbf{Plot Power} (Heat Energy Flux)
+    \State \textbf{Calculate Joule's Rule and Validate Results}
+    \State \textbf{Plot Current Density}
+\Else
+    \State \textbf{Define Critical Variables for Another System (Step 1)}
+\EndIf
+
+\end{algorithmic}
+\end{algorithm}
+
+To use the code in \href{https://colab.research.google.com/drive/13jeFxGGuYIKkYAF5masezWn5jW-AHsGR?usp=drive_link}{cable-ac-field-simulation} it is very simple, the user only needs to define the critical variables for their specific cable system and run the code to obtain the energy values. Recall the objective of this 2D simulation is to obtain the energy values of the system in order to pass them on into solid works (R). 
