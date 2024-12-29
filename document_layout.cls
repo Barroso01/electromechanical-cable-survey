@@ -16,7 +16,7 @@
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{} % Clear all headers and footers
-\fancyhead[L]{\textit{optics laboratory techniques}} % Left-aligned running head
+\fancyhead[L]{\textit{electrodynamics}} % Left-aligned running head
 \fancyhead[R]{\textit{@tec.mx}} % Right-aligned running head
 \fancyfoot[C]{\thepage} % Page numbers in the footer
 \setlength{\headheight}{15pt} % Adjust head height to avoid warnings
